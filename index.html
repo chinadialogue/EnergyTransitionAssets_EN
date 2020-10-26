@@ -460,7 +460,7 @@
       .instruction p{
         color:#007979;
         font-weight: 700;
-        font-size:12px;
+        font-size:16px;
       }
 
       .item{
@@ -509,14 +509,27 @@
       height: 100%;
       }
 
-      #minCircle{
-        width: 11px;
-        height: 11px;
+      #reset, #reset2{
+        width: 30px;
+        height: 30px;
+        margin-bottom: 5px;
+        fill: #767676;
       }
 
-      #maxCircle{
-        width: 47px;
-        height: 47px;
+      #reset:hover, #reset2:hover{
+        fill: #cfcfcf;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+
+      #minCircle,#minCircle2{
+        width: 10px;
+        height: 10px;
+      }
+
+      #maxCircle,#maxCircle2{
+        width: 46px;
+        height: 46px;
       }
 
       #legendInstruction p:hover{
@@ -534,8 +547,9 @@
         width:120px;
       }
 
-      #capacity{
+      #capacity,#capacity2{
         margin-left: 0px;
+        margin-top: -10px;
       }
 
       .tab-slider--nav {
@@ -604,8 +618,60 @@
         margin-bottom: 20px;
       }
 
+      input[type="range"] {
+        -webkit-appearance: none !important;
+        width: 95%;
+        height: 15px;
+        background-color: #cfcfcf;
+        border-radius: 10px;
+        margin-left:0px;
+        transition: all 0.3s ease;
+      }
+
+      input[type="range"]:active,input[type="range"]:focus,input[type="range"]:target{
+        border: none !important;
+        outline: none!important;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none !important;
+        width: 20px;
+        height: 20px;
+        background-color: #D86449;
+        border-radius: 30px;
+        transition: all 0.5s ease;
+      }
+      input[type="range"]::-webkit-slider-thumb:hover {
+        background-color: #DF4C3B;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+
+      #sliderbar,#sliderbar2{
+        margin-top: 10px;
+      }
+
+      #start, #start2 {
+         position: relative;
+         display:inline;
+         margin-top: 10px;
+         margin-left: 0px;
+         font-size: 14px;
+         }
+       #end, #end2 {
+         position: relative;
+         display:inline;
+         margin-top: 10px;
+         margin-left: 140px;
+         font-size: 14px;
+       }
+
 
       @media screen and (max-width: 800px) {
+
+        .instruction p{
+          font-size:12px;
+        }
 
         .tab-slider--trigger {
           font-size: 10px;
@@ -637,7 +703,7 @@
           padding: 10px 20px;
         }
         #title{
-          margin-top:-10px;
+          margin-top:0px;
         }
         .mapboxgl-popup {
           max-width: 250px !important;
@@ -649,6 +715,15 @@
         #legendCol2{
           margin-left: -20px !important;
         }
+
+        #start, #start2 {
+           margin-left: 0px;
+           font-size: 11px;
+           }
+         #end, #end2 {
+           margin-left: 110px;
+           font-size: 12px;
+         }
       }
       @media screen and (max-width: 600px) {
 
@@ -720,6 +795,14 @@
        #logo img{
          width:100px;
        }
+       #start, #start2 {
+          margin-left: 0px;
+          font-size: 11px;
+          }
+        #end, #end2 {
+          margin-left: 120px;
+          font-size: 11px;
+        }
       }
       @media screen and (max-width: 500px) {
         .mapboxgl-popup {
@@ -752,6 +835,17 @@
             </div>
             <div class="tab-slider--container">
               <div id="tab1" class="tab-slider--body">
+                <div class="itemWrapper">
+                  <svg id="reset" version="1.1" x="0px" y="0px"
+                    viewBox="0 0 48.9 42" style="enable-background:new 0 0 48.9 42;" xml:space="preserve">
+                  <g id="">
+                   <path id="XMLID_2_" class="st0" d="M13.2,32.2c-4.1-4.1-5.4-9.7-4.3-14.9l4.4,1.4L10.1,6L0.1,14.3l4.4,1.4
+                     c-1.7,6.8,0.1,14.3,5.4,19.7c6.2,6.2,15.5,7.7,23.1,4.2L31.8,35C25.8,38.2,18.2,37.2,13.2,32.2z"/>
+                   <path id="XMLID_1_" class="st0" d="M44.5,26c1.7-6.8-0.1-14.3-5.4-19.7c-6.2-6.2-15.4-7.6-23-4.3l1.1,4.6c6-3,13.6-2.1,18.5,2.9
+                     c4.1,4.1,5.4,9.7,4.3,14.9l-4.4-1.4l3.1,12.7l10.1-8.4L44.5,26z"/>
+                  </g>
+                  </svg>
+                </div>
                 <div class="itemWrapper">
                   <div class='row toggle3 item filters' id="filter3">
                      <input id='layer3On' type="radio" value="layer3On" name="toggle3" checked='checked'>
@@ -799,7 +893,7 @@
                      <div class="toggle__pointer color7"></div>
                   </div>
                   <div class="item">
-                     <h2 id="seven">Constant failures</h2>
+                     <h2 id="seven">Constant Failures</h2>
                   </div>
                 </div>
                 <div class="itemWrapper">
@@ -809,7 +903,7 @@
                      <div class="toggle__pointer color6"></div>
                   </div>
                   <div class="item">
-                     <h2 id="six">Halted/ suspended</h2>
+                     <h2 id="six">Halted / Suspended</h2>
                   </div>
                 </div>
 
@@ -823,12 +917,37 @@
                      <h2 id="two">Closed</h2>
                   </div>
                 </div>
+                <div id="capacity" class='row itemWrapper'>
+                   <h2 class="subtitle"> Capacity </h2>
+                   <div class="">
+                      <img id="minCircle" class='item2' src="./img/legend.svg" /img>
+                      <p id="minCircleVal" class='item2'></p>
+                      <img id="maxCircle" class='item2' src="./img/legend.svg" /img>
+                      <p id="maxCircleVal" class='item2'></p>
+                   </div>
+                </div>
+                <div class='session' id='sliderbar'>
+                   <input id='slider' class='row' type='range' min='0' max='' step='1' value='' />
+                   <div id="wrapper">
+                      <p id="start"></p>
+                      <p id="end"></p>
+                   </div>
+                   <p>Minimum capacity: <span id="selectedCapacity">1</span> MW </p>
+                </div>
               </div>
               <!-- end tab 1 -->
               <div id="tab2" class="tab-slider--body">
-                <!-- <div class='itemWrapper'>
-                   <h2 class="subtitle"> Fuel types </h2>
-                </div> -->
+                <div class="itemWrapper">
+                  <svg id="reset2" version="1.1" x="0px" y="0px"
+                    viewBox="0 0 48.9 42" style="enable-background:new 0 0 48.9 42;" xml:space="preserve">
+                  <g id="">
+                   <path id="XMLID_2_" class="st0" d="M13.2,32.2c-4.1-4.1-5.4-9.7-4.3-14.9l4.4,1.4L10.1,6L0.1,14.3l4.4,1.4
+                     c-1.7,6.8,0.1,14.3,5.4,19.7c6.2,6.2,15.5,7.7,23.1,4.2L31.8,35C25.8,38.2,18.2,37.2,13.2,32.2z"/>
+                   <path id="XMLID_1_" class="st0" d="M44.5,26c1.7-6.8-0.1-14.3-5.4-19.7c-6.2-6.2-15.4-7.6-23-4.3l1.1,4.6c6-3,13.6-2.1,18.5,2.9
+                     c4.1,4.1,5.4,9.7,4.3,14.9l-4.4-1.4l3.1,12.7l10.1-8.4L44.5,26z"/>
+                  </g>
+                  </svg>
+                </div>
                 <div class="itemWrapper">
                   <div class='row toggle9 item filters' id="filter9">
                      <input id='layer9On' type="radio" value="layer9On" name="toggle9" checked='checked'>
@@ -909,16 +1028,24 @@
                      <h2 id="sixteen">Other</h2>
                   </div>
                 </div>
+                <div id="capacity2" class='row itemWrapper'>
+                   <h2 class="subtitle"> Capacity </h2>
+                   <div class="">
+                      <img id="minCircle2" class='item2' src="./img/legend.svg" /img>
+                      <p id="minCircleVal2" class='item2'></p>
+                      <img id="maxCircle2" class='item2' src="./img/legend.svg" /img>
+                      <p id="maxCircleVal2" class='item2'></p>
+                   </div>
+                </div>
+                <div class='session' id='sliderbar2'>
+                   <input id='slider2' class='row' type='range' min='0' max='' step='1' value='' />
+                   <div id="wrapper">
+                      <p id="start2"></p>
+                      <p id="end2"></p>
+                   </div>
+                   <p>Minimum capacity: <span id="selectedCapacity2">1</span> MW </p>
+                </div>
               </div>
-            </div>
-            <div id="capacity" class='row itemWrapper'>
-               <h2 class="subtitle"> Capacity </h2>
-               <div class="">
-                  <img id="minCircle" class='item2' src="./img/legend.svg" /img>
-                  <p id="minCircleVal" class='item2'></p>
-                  <img id="maxCircle" class='item2' src="./img/legend.svg" /img>
-                  <p id="maxCircleVal" class='item2'></p>
-               </div>
             </div>
             <div class="instruction itemWrapper" id="instruction">
                <p class="item">Click on the circles for more information</p>
@@ -947,7 +1074,6 @@
           }
       });
 
-
       if ( viewportWidth < 800 && viewportWidth >= 600) {
           medium = true;
       }
@@ -956,7 +1082,6 @@
           mobile = true;
       }
 
-      //console.log(mobile);
 
       if (/iPhone/i.test(navigator.userAgent)) {
           iphone = true;
@@ -1066,14 +1191,11 @@
       };
 
 
-
-
-
-
       var min = 10;
-      var max = 10;
-      var minCircleSize = 5;
-      var maxCircleSize = 25;
+      var max = 2500;
+      var maxSlider = 1;
+      var minCircleSize = 4;
+      var maxCircleSize = 24;
 
       var tab1 = true;
 
@@ -1100,10 +1222,6 @@
       }
 
 
-
-
-
-
       map.on('load', function() {
 
           init(); // test google sheet
@@ -1112,15 +1230,14 @@
               $("#toggleConsole img").toggleClass("flip");
           });
 
-          // var consoleHeight = $("#console").height() / 2;
-          $("#toggleConsole").css("top", 270);
+          $("#toggleConsole").css("top", 280);
 
           if(medium){
-            $("#toggleConsole").css("top", 220);
+            $("#toggleConsole").css("top", 250);
           }
 
           if(mobile){
-            $("#toggleConsole").css("top", 210);
+            $("#toggleConsole").css("top", 230);
           }
 
 
@@ -1131,17 +1248,15 @@
       }
 
 
-
       function init() {
 
             Tabletop.init({
-                key: 'https://docs.google.com/spreadsheets/d/12jkEWJFlHNtZTyAGCgBnyewhdSdNr9K0dEfxtmWifVk/edit?usp=sharing',
+                key: 'https://docs.google.com/spreadsheets/d/1fklOV56HUbic6oodogrjmFYxK5xMnl7dZPQo77_X2lw/edit?usp=sharing',
                 callback: onDataLoad,
                 simpleSheet: true
             });
 
       }
-
 
 
       function onDataLoad(data) {
@@ -1180,8 +1295,8 @@
                 if (+row.Capacity < min) {
                     min = +row.Capacity;
                 }
-                if (+row.Capacity > max) {
-                    max = +row.Capacity;
+                if (+row.Capacity > maxSlider) {
+                    maxSlider = +row.Capacity;
                 }
               }
 
@@ -1228,37 +1343,37 @@
 
               if(lon != null && lat !=null && !isNaN(lon) && !isNaN(lat) && capacity !=null){
                 // geoJsonData['features'].push(feature);
-                if(status == 'Activa'){
+                if(status == 'active'){
                   geoJsonData1['features'].push(feature);
-                }else if(status == 'Cerrada'){
+                }else if(status == 'closed'){
                   geoJsonData2['features'].push(feature);
-                }else if(status == 'Planeada'){ //Planeada
+                }else if(status == 'planned'){ //Planeada
                   geoJsonData3['features'].push(feature);
-                }else if(status == 'Descartada'){
+                }else if(status == 'decommissioned'){
                   geoJsonData4['features'].push(feature);
-                }else if(status == 'En construcción'){
+                }else if(status == 'under construction'){
                   geoJsonData5['features'].push(feature);
-                }else if(status == 'Paralizada'){
+                }else if(status == 'halted'){
                   geoJsonData6['features'].push(feature);
-                }else if(status == 'Fallas constantes'){
+                }else if(status == 'constant failures'){
                   geoJsonData7['features'].push(feature);
                 }
 
-                if(row.Main_fuel == 'Gas natural'){
+                if(row.Main_fuel == 'Natural gas'){
                   geoJsonDataGas['features'].push(feature);
-                }else if(row.Main_fuel == 'Carbón'){
+                }else if(row.Main_fuel == 'coal'){
                   geoJsonDataCarbon['features'].push(feature);
                 }else if(row.Main_fuel == 'Fuel oil'){
                   geoJsonDataFuelOil['features'].push(feature);
                 }else if(row.Main_fuel == 'Diesel'){
                   geoJsonDataDiesel['features'].push(feature);
-                }else if(row.Main_fuel == 'Petróleo'){
+                }else if(row.Main_fuel == 'oil'){
                   geoJsonDataPetro['features'].push(feature);
-                }else if(row.Main_fuel == 'Otro'){
+                }else if(row.Main_fuel == 'other'){
                   geoJsonDataOther['features'].push(feature);
-                }else if(row.Main_fuel == 'Gas propano'){
+                }else if(row.Main_fuel == 'propane'){
                   geoJsonDataGasPropane['features'].push(feature);
-                }else if(row.Main_fuel == 'Coque de petróleo'){
+                }else if(row.Main_fuel == 'petcoke'){
                   geoJsonDataPetro2['features'].push(feature);
                 }
 
@@ -1267,7 +1382,9 @@
           });
 
           $("#minCircleVal").html(`${min} MW`);
-          $("#maxCircleVal").html(`${max} MW`);
+          $("#maxCircleVal").html(`${max}+ MW`);
+          $("#minCircleVal2").html(`${min} MW`);
+          $("#maxCircleVal2").html(`${max}+ MW`);
 
 
           function addLayerToMap(layerID,dataInner,color){
@@ -1297,6 +1414,23 @@
             });
           }
 
+            var layerNamesOff = []
+            var allTab1Layers = ['Activa','Cerrada','Planeada','Descartada','EnConstruccion','Paralizada','FallasConstantes']
+            var allTab2Layers = ['Gas','Carbon','FuelOil','Diesel','Petro','Propane','Petro2','Other']
+
+           $("#start").html(min + 'MW');
+           $("#end").html(maxSlider+ 'MW');
+           $("#start2").html(min+ 'MW');
+           $("#end2").html(maxSlider+ 'MW');
+
+           $('#slider').prop('min', min);
+           $('#slider').prop('max', maxSlider);
+           $('#slider').prop('value', min);
+           $('#slider2').prop('min', min);
+           $('#slider2').prop('max', maxSlider);
+           $('#slider2').prop('value', min);
+
+           // add all status layers
           addLayerToMap('Activa',geoJsonData1,"#7fc97f");
           addLayerToMap('Cerrada',geoJsonData2,"#beaed4");
           addLayerToMap('Planeada',geoJsonData3,"#fdc086");
@@ -1304,7 +1438,8 @@
           addLayerToMap('EnConstruccion',geoJsonData5,"#386cb0");
           addLayerToMap('Paralizada',geoJsonData6,"#f0027f");
           addLayerToMap('FallasConstantes',geoJsonData7,"#bf5b17");
-          // addLayerToMap('Other',geoJsonData8,"#666666");
+
+           // add all fuel layers
           addLayerToMap('Gas',geoJsonDataGas,"#7fc97f");
           addLayerToMap('Carbon',geoJsonDataCarbon,"#beaed4");
           addLayerToMap('FuelOil',geoJsonDataFuelOil,"#fdc086");
@@ -1313,7 +1448,6 @@
           addLayerToMap('Propane',geoJsonDataGasPropane,"#f0027f");
           addLayerToMap('Petro2',geoJsonDataPetro2,"#bf5b17");
           addLayerToMap('Other',geoJsonDataOther,"#666666");
-
 
 
           //reset all fuel filters on start
@@ -1352,10 +1486,86 @@
                 map.setPaintProperty(layerName,'circle-opacity',0);
                 map.setPaintProperty(layerName,'circle-stroke-width',0);
                 map.setPaintProperty(layerName,'circle-radius',0);
-                $(layerOnID).prop('checked', true);
-                $(layerOffID).prop('checked', false);
+                $(layerOnID).prop('checked', false);
+                $(layerOffID).prop('checked', true);
+          }
+
+          function resetSlider(layerName){
+
+            var filterCapacity =  ['>=', 'capacity', 1];
+            document.getElementById('selectedCapacity').innerText = 1;
+            map.setFilter(layerName, filterCapacity);
+            $("#slider").val(1);
+            $("#slider").trigger('change');
 
           }
+
+          function resetSlider2(layerName){
+
+            var filterCapacity2 =  ['>=', 'capacity', 1];
+            document.getElementById('selectedCapacity2').innerText = 1;
+            map.setFilter(layerName, filterCapacity2);
+            $("#slider2").val(1);
+            $("#slider2").trigger('change');
+
+          }
+
+          // map.on('closeAllPopups', () => {
+          //   popup.remove();
+          // });
+
+
+
+          $("#reset").click(function() {
+            resetFilter('Activa', '#layer1On', '#layer1Off');
+            resetFilter('Cerrada', '#layer2On', '#layer2Off');
+            resetFilter('Planeada', '#layer3On', '#layer3Off');
+            resetFilter('Descartada', '#layer4On', '#layer4Off');
+            resetFilter('EnConstruccion', '#layer5On', '#layer5Off');
+            resetFilter('Paralizada', '#layer6On', '#layer6Off');
+            resetFilter('FallasConstantes', '#layer7On', '#layer7Off');
+
+
+            layerNamesOff = layerNamesOff.filter( function( el ) {
+              return !allTab1Layers.includes( el );
+            });
+
+            resetSlider('Activa')
+            resetSlider('Cerrada')
+            resetSlider('Planeada')
+            resetSlider('Descartada')
+            resetSlider('EnConstruccion')
+            resetSlider('Paralizada')
+            resetSlider('FallasConstantes')
+
+          });
+
+          $("#reset2").click(function() {
+            resetFilter('Gas','#layer9On', '#layer9Off')
+            resetFilter('Carbon','#layer10On', '#layer10Off')
+            resetFilter('FuelOil','#layer11On', '#layer11Off')
+            resetFilter('Diesel','#layer12On', '#layer12Off')
+            resetFilter('Petro','#layer13On', '#layer13Off')
+            resetFilter('Propane','#layer14On', '#layer14Off')
+            resetFilter('Petro2','#layer15On', '#layer15Off')
+            resetFilter('Other','#layer16On', '#layer16Off')
+
+            layerNamesOff = layerNamesOff.filter( function( el ) {
+              return !allTab2Layers.includes( el );
+            });
+
+            resetSlider2('Gas')
+            resetSlider2('Carbon')
+            resetSlider2('FuelOil')
+            resetSlider2('Diesel')
+            resetSlider2('Petro')
+            resetSlider2('Propane')
+            resetSlider2('Petro2')
+            resetSlider2('Other')
+
+          });
+
+
 
           $("document").ready(function(){
               $(".tab-slider--body").hide();
@@ -1364,21 +1574,32 @@
 
             $(".tab-slider--nav li").click(function() {
               $(".tab-slider--body").hide();
+              // map.fire('closeAllPopups');
+              $('.mapboxgl-popup').remove();
 
+              // var activeTab = $(this).attr("rel");
+              var activeTab;
 
+              tab1 = !tab1;
 
-              var activeTab = $(this).attr("rel");
+              if(tab1){
+                activeTab = "tab1"
+              }else{
+                activeTab = "tab2"
+              }
 
-              if(activeTab == "tab1"){
-                  $("#toggleConsole").css("top", 270);
+              if(tab1){
+                  $("#toggleConsole").css("top", 280);
                   if(medium){
-                    $("#toggleConsole").css("top", 220);
+                    $("#toggleConsole").css("top", 250);
                   }
 
                   if(mobile){
-                    $("#toggleConsole").css("top", 210);
+                    $("#toggleConsole").css("top", 230);
                   }
-                  tab1 = true;
+                  // tab1 = true;
+
+                  //turn on all filters in tab 1
                   resetFilter('Activa', '#layer1On', '#layer1Off');
                   resetFilter('Cerrada', '#layer2On', '#layer2Off');
                   resetFilter('Planeada', '#layer3On', '#layer3Off');
@@ -1386,6 +1607,7 @@
                   resetFilter('EnConstruccion', '#layer5On', '#layer5Off');
                   resetFilter('Paralizada', '#layer6On', '#layer6Off');
                   resetFilter('FallasConstantes', '#layer7On', '#layer7Off');
+                  //turn off all filters in tab 2
                   resetFilter2('Gas','#layer9On', '#layer9Off')
                   resetFilter2('Carbon','#layer10On', '#layer10Off')
                   resetFilter2('FuelOil','#layer11On', '#layer11Off')
@@ -1395,17 +1617,27 @@
                   resetFilter2('Petro2','#layer15On', '#layer15Off')
                   resetFilter2('Other','#layer16On', '#layer16Off')
 
+                  // don't reset the layers that are in the layerNamesOff array when switching tabs, since they are suppsoed to be hidden
+                  if(layerNamesOff.indexOf('Activa') !== -1){resetFilter2('Activa', '#layer1On', '#layer1Off');}
+                  if(layerNamesOff.indexOf('Cerrada') !== -1){resetFilter2('Cerrada', '#layer2On', '#layer2Off');}
+                  if(layerNamesOff.indexOf('Planeada') !== -1){resetFilter2('Planeada', '#layer3On', '#layer3Off');}
+                  if(layerNamesOff.indexOf('Descartada') !== -1){resetFilter2('Descartada', '#layer4On', '#layer4Off');}
+                  if(layerNamesOff.indexOf('EnConstruccion') !== -1){resetFilter2('EnConstruccion', '#layer5On', '#layer5Off');}
+                  if(layerNamesOff.indexOf('Paralizada') !== -1){resetFilter2('Paralizada', '#layer6On', '#layer6Off');}
+                  if(layerNamesOff.indexOf('FallasConstantes') !== -1){resetFilter2('FallasConstantes', '#layer7On', '#layer7Off');}
+
 
               }else{
-                  $("#toggleConsole").css("top", 290);
+                  $("#toggleConsole").css("top", 300);
                   if(medium){
-                    $("#toggleConsole").css("top", 220);
+                    $("#toggleConsole").css("top", 280);
                   }
 
                   if(mobile){
-                    $("#toggleConsole").css("top", 220);
+                    $("#toggleConsole").css("top", 260);
                   }
-                  tab1 = false;
+                  // tab1 = false;
+                  //turn off all filters in tab 1
                   resetFilter2('Activa', '#layer1On', '#layer1Off');
                   resetFilter2('Cerrada', '#layer2On', '#layer2Off');
                   resetFilter2('Planeada', '#layer3On', '#layer3Off');
@@ -1413,6 +1645,7 @@
                   resetFilter2('EnConstruccion', '#layer5On', '#layer5Off');
                   resetFilter2('Paralizada', '#layer6On', '#layer6Off');
                   resetFilter2('FallasConstantes', '#layer7On', '#layer7Off');
+                  //turn on all filters in tab 2
                   resetFilter('Gas','#layer9On', '#layer9Off')
                   resetFilter('Carbon','#layer10On', '#layer10Off')
                   resetFilter('FuelOil','#layer11On', '#layer11Off')
@@ -1421,21 +1654,28 @@
                   resetFilter('Propane','#layer14On', '#layer14Off')
                   resetFilter('Petro2','#layer15On', '#layer15Off')
                   resetFilter('Other','#layer16On', '#layer16Off')
+
+                  // don't reset the layers that are in the layerNamesOff array when switching tabs, since they are suppsoed to be hidden
+                  if(layerNamesOff.indexOf('Gas') !== -1){resetFilter2('Gas','#layer9On', '#layer9Off')};
+                  if(layerNamesOff.indexOf('Carbon') !== -1){resetFilter2('Carbon','#layer10On', '#layer10Off')}
+                  if(layerNamesOff.indexOf('FuelOil') !== -1){resetFilter2('FuelOil','#layer11On', '#layer11Off')}
+                  if(layerNamesOff.indexOf('Diesel') !== -1){resetFilter2('Diesel','#layer12On', '#layer12Off')}
+                  if(layerNamesOff.indexOf('Petro') !== -1){resetFilter2('Petro','#layer13On', '#layer13Off')}
+                  if(layerNamesOff.indexOf('Propane') !== -1){resetFilter2('Propane','#layer14On', '#layer14Off')}
+                  if(layerNamesOff.indexOf('Petro2') !== -1){resetFilter2('Petro2','#layer15On', '#layer15Off')}
+                  if(layerNamesOff.indexOf('Other') !== -1){resetFilter2('Other','#layer16On', '#layer16Off')}
+
               }
 
               $("#"+activeTab).fadeIn();
-              if($(this).attr("rel") == "tab2"){
+              if(!tab1){
                 $('.tab-slider--tabs').addClass('slide');
               }else{
                 $('.tab-slider--tabs').removeClass('slide');
               }
               $(".tab-slider--nav li").removeClass("activeTab");
-              $(this).addClass("activeTab");
+              $('[rel="'+activeTab+'"]').addClass("activeTab");
             });
-
-
-
-
 
 
           function createFilter(filterName,layerStatus,layerName){
@@ -1445,16 +1685,34 @@
                if (e.target.value === layerStatus) {
                   map.setPaintProperty(layerName,'circle-opacity',0.7);
                   map.setPaintProperty(layerName,'circle-stroke-width',0.5);
+                  map.setPaintProperty(layerName,'circle-radius',[
+                    'interpolate',
+                    ["linear"],
+                    ['get', 'capacity'],
+                    min,
+                    minCircleSize,
+                    max,
+                    maxCircleSize
+                  ])
+                  //if layer exists then remove it
+                  if(layerNamesOff.indexOf(layerName) !== -1){
+                    var index = layerNamesOff.indexOf(layerName);
+                        layerNamesOff.splice(index, 1);
+                  }
+
                } else {
                   map.setPaintProperty(layerName,'circle-opacity',0);
                   map.setPaintProperty(layerName,'circle-stroke-width',0);
+                  map.setPaintProperty(layerName,'circle-radius',0);
+
+                  //if layer doesn't exist then push
+                  if(layerNamesOff.indexOf(layerName) == -1){
+                    layerNamesOff.push(layerName)
+                  }
                }
 
            });
-
           }
-
-
 
           createFilter('filter1','layer1On','Activa');
           createFilter('filter2','layer2On','Cerrada');
@@ -1473,15 +1731,43 @@
           createFilter('filter16','layer16On','Other');
 
 
+          document.getElementById('slider').addEventListener('input', function(e) {
+                 var sliderVal = +e.target.value;
+
+                 var filterCapacity =  ['>=', 'capacity', sliderVal];
+                 document.getElementById('selectedCapacity').innerText = sliderVal;
+
+                 map.setFilter('Activa', filterCapacity);
+                 map.setFilter('Cerrada', filterCapacity);
+                 map.setFilter('Planeada', filterCapacity);
+                 map.setFilter('Descartada', filterCapacity);
+                 map.setFilter('EnConstruccion', filterCapacity);
+                 map.setFilter('Paralizada', filterCapacity);
+                 map.setFilter('FallasConstantes', filterCapacity);
+               }); //end slider input
+
+           document.getElementById('slider2').addEventListener('input', function(e) {
+                  var sliderVal = +e.target.value;
+
+                  var filterCapacity2 =  ['>=', 'capacity', sliderVal];
+                  document.getElementById('selectedCapacity2').innerText = sliderVal;
+
+                  map.setFilter('Gas', filterCapacity2);
+                  map.setFilter('Carbon', filterCapacity2);
+                  map.setFilter('FuelOil', filterCapacity2);
+                  map.setFilter('Diesel', filterCapacity2);
+                  map.setFilter('Petro', filterCapacity2);
+                  map.setFilter('Propane', filterCapacity2);
+                  map.setFilter('Petro2', filterCapacity2);
+                  map.setFilter('Other', filterCapacity2);
+                }); //end slider input
+
 
           map.on('mouseleave', function() {
               map.getCanvas().style.cursor = '';
               // popup.270();
           });
 
-          // $(".tab-slider--nav li").click(function() {
-          //   popup.remove();
-          // });
 
           function addClickEvent(layerID,className,color){
 
@@ -1513,26 +1799,51 @@
 
                 var popupClass=className;
 
-                popup = new mapboxgl.Popup({
-                        closeButton: true,
-                        closeOnClick: true,
-                        className: popupClass
-                    })
-                    .setHTML('<h3 class="popupClass"><b>' + project + '</b></h3>'
-                    + '<h4><b>Country</b>: '+country+'<br>'
-                    + '<b>Location</b>: '+location+'<br>'
-                    + '<b>Status</b>: '+status+'<br>'
-                    + '<b>Capacity</b>: '+capacity+' MW<br>'
-                    + '<b>Main Fuel</b>: '+mainFuel+'<br>'
-                    + '<b>Other Fuels</b>: '+otherFuels+'<br>'
-                    + '<b>Began Operations</b>: '+operationStart+'<br>'
-                    + '<b>Owner</b>: '+owner+'<br>'
-                    + '<b>Company HQ</b>: '+companyHQ+'<br>'
-                    + '<b>Capital</b>: '+capital+'<br>'
-                    + '<b>Shareholders</b>: '+shareholders+'</h4>'
-                    + `<div class="button ${popupClass}"><a target="_blank" href="${links}">Read More</a></div>`)
-                    .setLngLat([longitude, latitude])
-                    .addTo(map);
+                if(links == "" || links == null){
+                  popup = new mapboxgl.Popup({
+                          closeButton: true,
+                          closeOnClick: true,
+                          className: popupClass
+                      })
+                      .setHTML('<h3 class="popupClass"><b>' + project + '</b></h3>'
+                      + '<h4><b>Country</b>: '+country+'<br>'
+                      + '<b>Location</b>: '+location+'<br>'
+                      + '<b>Status</b>: '+status+'<br>'
+                      + '<b>Capacity</b>: '+capacity+' MW<br>'
+                      + '<b>Main fuels</b>: '+mainFuel+'<br>'
+                      + '<b>Other fuels</b>: '+otherFuels+'<br>'
+                      + '<b>Began operations</b>: '+operationStart+'<br>'
+                      + '<b>Owner</b>: '+owner+'<br>'
+                      + '<b>Company HQ</b>: '+companyHQ+'<br>'
+                      + '<b>Capital</b>: '+capital+'<br>'
+                      + '<b>Shareholders</b>: '+shareholders+'</h4>')
+                      .setLngLat([longitude, latitude])
+                      .addTo(map);
+
+                }else{
+                  popup = new mapboxgl.Popup({
+                          closeButton: true,
+                          closeOnClick: true,
+                          className: popupClass
+                      })
+                      .setHTML('<h3 class="popupClass"><b>' + project + '</b></h3>'
+                      + '<h4><b>Country</b>: '+country+'<br>'
+                      + '<b>Location</b>: '+location+'<br>'
+                      + '<b>Status</b>: '+status+'<br>'
+                      + '<b>Capacity</b>: '+capacity+' MW<br>'
+                      + '<b>Main fuels</b>: '+mainFuel+'<br>'
+                      + '<b>Other fuels</b>: '+otherFuels+'<br>'
+                      + '<b>Began operations</b>: '+operationStart+'<br>'
+                      + '<b>Owner</b>: '+owner+'<br>'
+                      + '<b>Company HQ</b>: '+companyHQ+'<br>'
+                      + '<b>Capital</b>: '+capital+'<br>'
+                      + '<b>Shareholders</b>: '+shareholders+'</h4>'
+                      + `<div class="button ${popupClass}"><a target="_blank" href="${links}">Read more</a></div>`)
+                      .setLngLat([longitude, latitude])
+                      .addTo(map);
+                }
+
+
 
 
                     $(`.button.${popupClass}`).hover(function(){
@@ -1578,26 +1889,49 @@
 
               var popupClass=className;
 
-              popup = new mapboxgl.Popup({
-                      closeButton: true,
-                      closeOnClick: true,
-                      className: popupClass
-                  })
-                  .setHTML('<h3 class="popupClass"><b>' + project + '</b></h3>'
-                  + '<h4><b>Country</b>: '+country+'<br>'
-                  + '<b>Location</b>: '+location+'<br>'
-                  + '<b>Status</b>: '+status+'<br>'
-                  + '<b>Capacity</b>: '+capacity+' MW<br>'
-                  + '<b>Main Fuel</b>: '+mainFuel+'<br>'
-                  + '<b>Other Fuels</b>: '+otherFuels+'<br>'
-                  + '<b>Began Operations</b>: '+operationStart+'<br>'
-                  + '<b>Owner</b>: '+owner+'<br>'
-                  + '<b>Company HQ</b>: '+companyHQ+'<br>'
-                  + '<b>Capital</b>: '+capital+'<br>'
-                  + '<b>Shareholders</b>: '+shareholders+'</h4>'
-                  + `<div class="button ${popupClass}"><a target="_blank" href="${links}">Read More</a></div>`)
-                  .setLngLat([longitude, latitude])
-                  .addTo(map);
+              if(links == "" || links == null){
+                popup = new mapboxgl.Popup({
+                        closeButton: true,
+                        closeOnClick: true,
+                        className: popupClass
+                    })
+                    .setHTML('<h3 class="popupClass"><b>' + project + '</b></h3>'
+                    + '<h4><b>Country</b>: '+country+'<br>'
+                    + '<b>Location</b>: '+location+'<br>'
+                    + '<b>Status</b>: '+status+'<br>'
+                    + '<b>Capacity</b>: '+capacity+' MW<br>'
+                    + '<b>Main fuels</b>: '+mainFuel+'<br>'
+                    + '<b>Other fuels</b>: '+otherFuels+'<br>'
+                    + '<b>Began operations</b>: '+operationStart+'<br>'
+                    + '<b>Owner</b>: '+owner+'<br>'
+                    + '<b>Company HQ</b>: '+companyHQ+'<br>'
+                    + '<b>Capital</b>: '+capital+'<br>'
+                    + '<b>Shareholders</b>: '+shareholders+'</h4>')
+                    .setLngLat([longitude, latitude])
+                    .addTo(map);
+
+              }else{
+                popup = new mapboxgl.Popup({
+                        closeButton: true,
+                        closeOnClick: true,
+                        className: popupClass
+                    })
+                    .setHTML('<h3 class="popupClass"><b>' + project + '</b></h3>'
+                    + '<h4><b>Country</b>: '+country+'<br>'
+                    + '<b>Location</b>: '+location+'<br>'
+                    + '<b>Status</b>: '+status+'<br>'
+                    + '<b>Capacity</b>: '+capacity+' MW<br>'
+                    + '<b>Main fuels</b>: '+mainFuel+'<br>'
+                    + '<b>Other fuels</b>: '+otherFuels+'<br>'
+                    + '<b>Began operations</b>: '+operationStart+'<br>'
+                    + '<b>Owner</b>: '+owner+'<br>'
+                    + '<b>Company HQ</b>: '+companyHQ+'<br>'
+                    + '<b>Capital</b>: '+capital+'<br>'
+                    + '<b>Shareholders</b>: '+shareholders+'</h4>'
+                    + `<div class="button ${popupClass}"><a target="_blank" href="${links}">Read more</a></div>`)
+                    .setLngLat([longitude, latitude])
+                    .addTo(map);
+              }
 
 
                   $(`.button.${popupClass}`).hover(function(){
